@@ -7,6 +7,7 @@
 
     let malePerson = 'Male.png';
     let femalePerson = 'Female.png';
+    let unknown = 'unknown.png';
     let person = 'person.png';
 
     const card = document.createElement('div');
@@ -59,7 +60,7 @@
             photo.src = femalePerson;
             break;
           default:
-            photo.src = person;
+            photo.src = unknown;
         }
       } else {
         photo.src = person;
