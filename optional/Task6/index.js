@@ -1,4 +1,35 @@
 
+function createHtml(user) {
+  return `<h1>${user.firstName} ${user.lastName}</h1>
+          <img src="person.png" alt="${user.firstName}" class="photo">
+          <table>
+            <tr>
+              <td class="text-bold">ID:</td>
+              <td>${user.id}</td>
+            </tr>
+            <tr>
+              <td class="text-bold">DEPT:</td>
+              <td>${user.department}</td>
+            </tr>
+            <tr>
+              <td class="text-bold">EMAIL:</td>
+              <td>${user.email}</td>
+            </tr>
+            <tr>
+              <td class="text-bold">PHONE:</td>
+              <td>${user.phone}</td>
+            </tr>
+            <tr class="gender">
+              <td class="text-bold">GENDER:</td>
+              <td class="hidden">${user.gender}</td>
+            </tr>
+            <tr>
+              <td class="text-bold">CAR:</td>
+              <td>${user.car ? user.car : 'None'}</td>
+            </tr>
+          </table>`;
+}
+
 (function () {
 
   const container = document.querySelector('.container');
@@ -13,36 +44,7 @@
     const card = document.createElement('div');
     card.className = 'card';
 
-    card.innerHTML = `
-        <h1>${user.firstName} ${user.lastName}</h1>
-        <img src="${person}" alt="${user.firstName}" class="photo">
-        <table>
-          <tr>
-            <td class="text-bold">ID:</td>
-            <td>${user.id}</td>
-          </tr>
-          <tr>
-            <td class="text-bold">DEPT:</td>
-            <td>${user.department}</td>
-          </tr>
-          <tr>
-            <td class="text-bold">EMAIL:</td>
-            <td>${user.email}</td>
-          </tr>
-          <tr>
-            <td class="text-bold">PHONE:</td>
-            <td>${user.phone}</td>
-          </tr>
-          <tr class="gender">
-            <td class="text-bold">GENDER:</td>
-            <td class="hidden">${user.gender}</td>
-          </tr>
-          <tr>
-            <td class="text-bold">CAR:</td>
-            <td>${user.car ? user.car : 'None'}</td>
-          </tr>
-        </table>
-    `;
+    card.innerHTML = createHtml(user);
 
     const gender = card.querySelector('.gender');
     const hidden = card.querySelector('.hidden');
