@@ -5,10 +5,10 @@
 
   const htmlConstructor = function(user) {
 
-    let malePerson = 'Male.png';
-    let femalePerson = 'Female.png';
-    let unknown = 'unknown.png';
-    let person = 'person.png';
+    const malePerson = 'Male.png';
+    const femalePerson = 'Female.png';
+    const unknown = 'unknown.png';
+    const person = 'person.png';
 
     const card = document.createElement('div');
     card.className = 'card';
