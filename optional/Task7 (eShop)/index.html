@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-Shop</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/index.js"></script>
+</head>
+<body>
+  <header>
+    <h2>Электронный магазин</h2>
+  </header>
+
+  <section>
+    <form id="add-product">
+      <div class="form-row">
+        <label for="name">Название:</label>
+        <input type="text" id="name" name="name" placeholder="Название товара" required>
+      </div>
+      <div class="form-row">
+        <label for="name">Артикул:</label>
+        <input type="text" id="article" name="article" placeholder="Артикул товара">
+      </div>
+      <div class="form-row">
+        <label for="price">Цена:</label>
+        <input type="number" id="price" name="price" placeholder="Цена за единицу" required>
+      </div>
+      <div class="form-row">
+        <label for="discount">Скидка (%):</label>
+        <input type="number" id="discount" name="discount" placeholder="Скидка в %" max="100" min="0">
+      </div>
+      <div class="form-row">
+        <label for="inStock">Доступно:</label>
+        <input type="checkbox" id="inStock" name="inStock">
+      </div>
+      <div class="form-row">
+        <input type="submit" id="submit" value="Сохранить">
+      </div>
+    </form>
+  </section>
+
+  <section>
+    <h3 class="info"></h3>
+  </section>
+
+  <section>
+    <div class="container">
+
+    </div>
+  </section>
+</body>
+</html>
