@@ -11,7 +11,7 @@ info.classList.add('warning');
 form.onsubmit = (e) => {
   e.preventDefault();
 
-  const id = currentId || shop.length;
+  const id = shop.length;
   const name = e.target.querySelector('#name').value;
   const article = e.target.querySelector('#article').value;
   const price = e.target.querySelector('#price').value;
