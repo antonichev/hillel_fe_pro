@@ -11,18 +11,26 @@ info.classList.add('warning');
 form.onsubmit = (e) => {
   e.preventDefault();
 
-  const id = shop.length;
+  const currId = e.target.querySelector('#id').value;
+
+  const id = currId || shop.length;
   const name = e.target.querySelector('#name').value;
   const article = e.target.querySelector('#article').value;
   const price = e.target.querySelector('#price').value;
   const discount = e.target.querySelector('#discount').value;
   const inStock = e.target.querySelector('#inStock').checked;
 
-  const product = new Product({
-    id, name, article, price, discount, inStock
-  });
+  if(currId) {
+    shop[currId].changeMe({
+      name, article, price, discount, inStock
+    });
+  } else {
+    const product = new Product({
+      id, name, article, price, discount, inStock
+    });
 
-  shop.push(product);
+    shop.push(product);
+  }
 
   form.reset();
 
@@ -42,6 +50,15 @@ const removeItem = function() {
   }
 };
 
+const changeItem = function() {
+  form.querySelector('#id').value = this.id;
+  form.querySelector('#name').value = this.name;
+  form.querySelector('#article').value = this.article;
+  form.querySelector('#price').value = this.price;
+  form.querySelector('#discount').value = this.discount;
+  form.querySelector('#inStock').checked = this.inStock;
+};
+
 class Product {
   constructor(parameters) {
     this.id = parameters.id;
@@ -54,6 +71,14 @@ class Product {
 
   priceWithDiscount() {
     return this.price - this.price * this.discount / 100;
+  }
+
+  changeMe(parameters) {
+    this.name = parameters.name;
+    this.article = parameters.article;
+    this.price = parameters.price;
+    this.discount = parameters.discount;
+    this.inStock = parameters.inStock;
   }
 
   render(){
@@ -80,6 +105,8 @@ function mount() {
     const card = document.createElement('div');
     card.className = 'prod-card';
     card.innerHTML = item.render();
+
+    card.addEventListener('click', changeItem.bind(item));
 
     btn = card.querySelector('.remove-item');
     btn.onclick = removeItem.bind(item);
