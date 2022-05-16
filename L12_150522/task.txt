@@ -1,0 +1,62 @@
+1) Есть массив пользователей который нужно вывести в виде таблицы
+2) Таблицу можно оформить на свое усмотрение
+3) Для вывода таблицы пользоваться табличными тегами
+4) По клику на строку таблицы строка должна выделяться желтым цветом,
+   а если кликнуть еще раз строка должна снова вернуться в исходное состояние.
+5) По двойному клику на строку таблицы ondblclick должен выводиться alert
+   с именем пользователя который отрисован в этой же строке
+6) Таблица должна генерироваться динамически на основе массива пользователей
+7) Таблица должна быть выведена таким образом что если добавить в массив
+   новый объект с пользователем и перезагрузить страницу то и в html пользователь должен выводиться
+
+var users = [{
+"id": 1,
+"first_name": "Dulcinea",
+"last_name": "Beeton",
+"email": "dbeeton0@google.co.uk"
+}, {
+"id": 2,
+"first_name": "Shoshanna",
+"last_name": "Eymer",
+"email": "seymer1@behance.net"
+}, {
+"id": 3,
+"first_name": "Cull",
+"last_name": "Nazareth",
+"email": "cnazareth2@squidoo.com"
+}, {
+"id": 4,
+"first_name": "Dorella",
+"last_name": "Damerell",
+"email": "ddamerell3@taobao.com"
+}, {
+"id": 5,
+"first_name": "Robena",
+"last_name": "Jankovic",
+"email": "rjankovic4@youtube.com"
+}, {
+"id": 6,
+"first_name": "Jarret",
+"last_name": "Guitton",
+"email": "jguitton5@ucoz.ru"
+}, {
+"id": 7,
+"first_name": "Elias",
+"last_name": "Hanson",
+"email": "ehanson6@aol.com"
+}, {
+"id": 8,
+"first_name": "Corby",
+"last_name": "Gartrell",
+"email": "cgartrell7@sogou.com"
+}, {
+"id": 9,
+"first_name": "Scarlet",
+"last_name": "Eilhertsen",
+"email": "seilhertsen8@reverbnation.com"
+}, {
+"id": 10,
+"first_name": "Merv",
+"last_name": "Lequeux",
+"email": "mlequeux9@sohu.com"
+}]

@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+table {
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+th {
+  text-align: center;
+  font-weight: bold;
+  background-color: #ddd9ca;
+}
+
+.clicked {
+  background-color: #ffffa4;
+  transition: background-color .5s linear;
+}
