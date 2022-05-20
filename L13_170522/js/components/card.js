@@ -66,8 +66,8 @@ const card = function(user) {
 };
 
 function expand() {
-  //Need to find better way to get an App div
-  const app = this.parentNode.parentNode;
+
+  const app = document.querySelector('#app');
 
   if(app.prevOpen && app.prevOpen !== this.nextSibling) {
     app.prevOpen.classList.add('hidden');
