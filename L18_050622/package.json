@@ -1,0 +1,13 @@
+{
+  "name": "l18_050622",
+  "version": "0.1.0",
+  "description": "Home task #8",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Maksym Antonichev",
+  "license": "ISC"
+}
