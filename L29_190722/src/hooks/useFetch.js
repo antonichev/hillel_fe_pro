@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
+import { TODO_URL as url } from '../constants/urls';
 
-const useFetch = (url, options) => {
+const useFetch = () => {
   const [data, setData] = useState({
     loading: false,
     error: undefined,
@@ -8,10 +9,10 @@ const useFetch = (url, options) => {
   });
 
   useEffect(() => {
-    getData(url);
+    getData();
   }, []);
 
-  const getData = (url) => {
+  const getData = () => {
     setData({ loading: true });
 
     fetch(url)
@@ -36,16 +37,91 @@ const useFetch = (url, options) => {
       });
   };
 
-  const postData = (url, todo) => {
-    setData({ loading: true });
+  const postData = (todo) => {
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify(todo),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`This is an HTTP error: The status is ${res.status}`);
+        }
+
+        return res.json();
+      })
+      .then((res) => {
+        const todos = data.todos;
+
+        todos.push(res);
+
+        setData({ todos });
+      })
+      .catch((error) => {
+        setData({
+          error: error,
+        });
+      });
   };
 
-  const putData = (url, todo) => {
-    setData({ loading: true });
+  const putData = (id, todo) => {
+    fetch(`${url}/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify(todo),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`This is an HTTP error: The status is ${res.status}`);
+        }
+
+        const todos = data.todos;
+
+        let result = todos.find((item, index) => {
+          if (item.id === id) {
+            data.todos[index] = {
+              ...data.todos[index],
+              title: todo.title,
+              completed: todo.completed,
+            };
+            return true;
+          }
+          return false;
+        });
+
+        if (result) {
+          setData({ todos });
+        }
+      })
+      .catch((error) => {
+        setData({
+          error: error,
+        });
+      });
   };
 
-  const deleteData = (url, todo) => {
-    setData({ loading: true });
+  const deleteData = (id) => {
+    fetch(`${url}/${id}`, {
+      method: 'DELETE',
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`This is an HTTP error: The status is ${res.status}`);
+        }
+
+        const todos = data.todos.filter((item) => item.id !== id);
+
+        setData({ todos });
+      })
+      .catch((error) => {
+        setData({
+          error: error,
+        });
+      });
   };
 
   return {

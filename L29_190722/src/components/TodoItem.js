@@ -1,19 +1,22 @@
-import {TODO_URL} from '../constants/urls'
-
 const TodoItem = (props) => {
-  
-  const {id, title, createdAt, completed} = props.todo
-  const fetchData = props.fetchData
+  const { id, title, completed } = props.todo;
+  const { putData, deleteData } = props;
 
   return (
-    <div className="todo-item">
-      <p>{id}</p>
-      <p>{title}</p>
-      <p>{createdAt}</p>
-      <p>{completed}</p>
-      <button onClick={() => fetchData(`${TODO_URL}/${id}`, {method: 'DELETE'})}>Delete</button>
+    <div className='todo-item'>
+      <p
+        style={{
+          textDecoration: completed && 'line-through',
+        }}
+      >
+        {title}
+      </p>
+      <button onClick={() => deleteData(id)}>Delete</button>
+      <button onClick={() => putData(id, { title, completed: !completed })}>
+        Completed
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default TodoItem
+export default TodoItem;
