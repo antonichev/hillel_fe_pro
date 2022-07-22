@@ -80,22 +80,11 @@ const useFetch = () => {
         }
 
         const todos = data.todos;
+        const index = todos.findIndex((item) => item.id === id);
+        todos[index].title = todo.title;
+        todos[index].completed = todo.completed;
 
-        let result = todos.find((item, index) => {
-          if (item.id === id) {
-            data.todos[index] = {
-              ...data.todos[index],
-              title: todo.title,
-              completed: todo.completed,
-            };
-            return true;
-          }
-          return false;
-        });
-
-        if (result) {
-          setData({ todos });
-        }
+        setData({ todos });
       })
       .catch((error) => {
         setData({
