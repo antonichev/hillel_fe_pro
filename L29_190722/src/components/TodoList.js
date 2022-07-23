@@ -17,10 +17,16 @@ const TodoList = (props) => {
   return (
     <div>
       <TodoForm postData={postData} />
-      <ul>
+      <ul className='todo-list'>
         {todos &&
           todos.map((item) => (
-            <li key={item.id}>
+            <li
+              key={item.id}
+              className='todo-item'
+              style={{
+                backgroundColor: item.completed && '#cffaea',
+              }}
+            >
               <TodoItem todo={item} deleteData={deleteData} putData={putData} />
             </li>
           ))}

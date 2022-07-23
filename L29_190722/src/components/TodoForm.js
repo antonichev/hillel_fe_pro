@@ -17,9 +17,15 @@ const TodoForm = ({ postData }) => {
   };
 
   return (
-    <form onSubmit={addTodo}>
-      <input ref={title} type='text' required placeholder='Enter Todo Here' />
-      <input type='submit' value='ADD' />
+    <form className='add-todo-form' onSubmit={addTodo}>
+      <input
+        ref={title}
+        className='add-todo-input'
+        type='text'
+        required
+        placeholder='Enter Todo Here'
+      />
+      <input className='add-todo-submit' type='submit' value='ADD' />
     </form>
   );
 };

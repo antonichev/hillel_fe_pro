@@ -10,6 +10,7 @@ const TodoItem = (props) => {
   const form = () => {
     return (
       <form
+        className='edit-todo-form'
         onSubmit={(e) => {
           e.preventDefault();
           putData(id, { title: newTitle });
@@ -22,8 +23,9 @@ const TodoItem = (props) => {
           onChange={(e) => {
             setNewTitle(e.target.value);
           }}
+          className='edit-todo-input'
         />
-        <input type='submit' value='OK' />
+        <input className='edit-todo-submit' type='submit' value='OK' />
       </form>
     );
   };
@@ -41,19 +43,27 @@ const TodoItem = (props) => {
   };
 
   return (
-    <div className='todo-item'>
+    <div>
       {edit ? form() : paragraph()}
-      <button onClick={() => deleteData(id)}>Delete</button>
-      <button onClick={() => putData(id, { title, completed: !completed })}>
-        Completed
-      </button>
-      <button
-        onClick={() => {
-          setEdit(!edit);
-        }}
-      >
-        Edit
-      </button>
+      <div className='todo-buttons'>
+        <button
+          className='btn btn-complete'
+          onClick={() => {
+            setEdit(!edit);
+          }}
+        >
+          Edit
+        </button>
+        <button
+          className='btn btn-edit'
+          onClick={() => putData(id, { title, completed: !completed })}
+        >
+          {completed ? 'Undone' : 'Done'}
+        </button>
+        <button className='btn btn-delete' onClick={() => deleteData(id)}>
+          Delete
+        </button>
+      </div>
     </div>
   );
 };
