@@ -43,11 +43,12 @@ const TodoItem = (props) => {
   };
 
   return (
-    <div>
+    <>
       {edit ? form() : paragraph()}
       <div className='todo-buttons'>
+        <span className='btn-menu'>Menu</span>
         <button
-          className='btn btn-complete'
+          className='btn btn-edit'
           onClick={() => {
             setEdit(!edit);
           }}
@@ -55,7 +56,7 @@ const TodoItem = (props) => {
           Edit
         </button>
         <button
-          className='btn btn-edit'
+          className='btn btn-complete'
           onClick={() => putData(id, { title, completed: !completed })}
         >
           {completed ? 'Undone' : 'Done'}
@@ -64,7 +65,7 @@ const TodoItem = (props) => {
           Delete
         </button>
       </div>
-    </div>
+    </>
   );
 };
 
