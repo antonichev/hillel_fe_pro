@@ -49,7 +49,7 @@
   padding: 10px;
   border: 1px solid cadetblue;
   border-radius: 5px;
-  height: 90px;
+  height: 100px;
 }
 
 .todo-buttons {
@@ -90,7 +90,7 @@
   border-radius: 50%;
   visibility: hidden;
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
 }
 
 .btn-menu {
@@ -100,23 +100,34 @@
 
 .btn:hover {
   box-shadow: 0px 0px 29px -7px rgba(0, 0, 0, 0.75);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .btn-delete {
-  top: 60px;
-  right: 60px;
+  top: 56px;
+  right: -54px;
   background-color: #600202;
 }
 
 .btn-edit {
-  top: -10px;
-  right: 90px;
+  right: -65px;
   background-color: #8f862c;
 }
 
 .btn-complete {
-  top: -80px;
-  right: 60px;
+  top: -32px;
+  right: -53px;
   background-color: #568253;
+}
+
+.btn-delete,
+.btn-edit,
+.btn-complete {
+  width: 60px;
+  height: 40px;
+  border-radius: 10%;
+}
+
+li p {
+  font-size: large;
 }

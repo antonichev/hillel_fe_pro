@@ -23,7 +23,7 @@ const TodoList = (props) => {
             key={item.id}
             className='todo-item'
             style={{
-              backgroundColor: item.completed && '#cffaea',
+              backgroundColor: item.completed && '#ccc',
             }}
           >
             <TodoItem todo={item} deleteData={deleteData} putData={putData} />

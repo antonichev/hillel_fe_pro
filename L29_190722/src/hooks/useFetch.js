@@ -57,6 +57,8 @@ const useFetch = () => {
 
         todos.push(res);
 
+        todos.sort((a, b) => b.id - a.id);
+
         setData({ todos });
       })
       .catch((error) => {
