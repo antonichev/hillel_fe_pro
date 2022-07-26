@@ -1,0 +1,12 @@
+User should be able to add new stickers (for example using a button Add sticker)
+In the stickers that already on the page - the user can change the body/description of the sticker
+User can delete any sticker
+Information about stickers is saved on the BE (API)
+Implement with functional components
+Use custom hook useAsync (to get stickers from API).
+Use hook useCallback - at least ones.
+to handle API requests use Axios
+
+Bonus task:
+Save sticker content on click outside.
+On save, a temporal message is appieared on the screen that allows to cancel latest change.
