@@ -7,13 +7,16 @@ export const getStickers = () => {
 };
 
 export const addSticker = (sticker) => {
-  return axios.post('/');
+  if (sticker) return axios.post(baseURL, sticker);
+  return Promise.reject('No sticker found in params');
 };
 
-export const updateSticker = (id) => {
-  return axios.put(`/${id}`);
+export const updateSticker = (id, description) => {
+  if (id) return axios.put(`${baseURL}/${id}`, { description });
+  return Promise.reject('No id found in params');
 };
 
 export const removeSticker = (id) => {
-  return axios.delete(`/${id}`);
+  if (id) return axios.delete(`${baseURL}/${id}`);
+  return Promise.reject('No id found in params');
 };

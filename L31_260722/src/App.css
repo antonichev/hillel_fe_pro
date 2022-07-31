@@ -1,10 +1,40 @@
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-header {
+  background-color: #15015a;
+  color: #e0e1ce;
+  height: 75px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 15px;
+}
+
+.add-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #009707;
+  font-size: large;
+}
+
+.add-btn:hover {
+  color: #007105;
+  cursor: pointer;
+}
+
+.sticker-board {
+  margin: auto;
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 10px 20px;
+  width: 90%;
+}
+
+.sticker-item {
+  width: 250px;
+  height: 150px;
+  padding: 15px;
+  border: 1px solid #000;
+  border-radius: 10px;
 }
