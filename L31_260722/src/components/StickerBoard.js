@@ -1,23 +1,24 @@
 import { getStickers } from '../services/api';
 import StickerList from './StickerList';
 import AddButton from './AddButton';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import useAsync from './../hooks/useAsync';
 
 const StickerBoard = () => {
-  const [data, setData] = useState([]);
+  const { execute, data, setData, status } = useAsync(getStickers);
 
   useEffect(() => {
-    getStickers().then((resp) => {
-      setData(resp.data);
-    });
+    execute();
   }, []);
 
   return (
     <>
-      <AddButton setData={setData} data={data} />
-      <div className='sticker-board'>
-        <StickerList data={data} setData={setData} />
-      </div>
+      {status === 'success' && <AddButton data={data} setData={setData} />}
+      {status === 'success' && (
+        <div className='sticker-board'>
+          <StickerList data={data} setData={setData} />
+        </div>
+      )}
     </>
   );
 };

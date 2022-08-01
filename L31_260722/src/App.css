@@ -38,3 +38,37 @@
   border: 1px solid #000;
   border-radius: 10px;
 }
+
+.sticker-area {
+  width: 80%;
+  height: 100px;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+.st-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.st-btn {
+  font-size: larger;
+}
+
+.st-btn:hover {
+  cursor: pointer;
+}
+
+.btn-cancel {
+  color: #007105;
+}
+
+.btn-del {
+  color: #710000;
+}

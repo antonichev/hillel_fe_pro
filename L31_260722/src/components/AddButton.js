@@ -14,7 +14,7 @@ const AddButton = ({ data, setData }) => {
   return (
     <div className='add-btn'>
       <span onClick={addNewSticker}>
-        <i class='fa-solid fa-circle-plus fa-2xl'></i>
+        <i className='fa-solid fa-circle-plus fa-2xl'></i>
       </span>
     </div>
   );

@@ -36,14 +36,15 @@ const StickerItem = ({ id, description, setData, data }) => {
     if (!showCancel) return null;
 
     return (
-      <button
+      <div
+        className='st-btn btn-cancel'
         onClick={() => {
           canDel.current = false;
           setShowCancel(false);
         }}
       >
-        Cancel delete
-      </button>
+        <i className='fas fa-undo'></i>
+      </div>
     );
   };
 
@@ -53,7 +54,8 @@ const StickerItem = ({ id, description, setData, data }) => {
 
   const descInput = () => {
     return (
-      <input
+      <textarea
+        className='sticker-area'
         type='test'
         value={currentDescription}
         onBlur={() => {
@@ -71,11 +73,13 @@ const StickerItem = ({ id, description, setData, data }) => {
 
   return (
     <div className='sticker-item'>
-      {isEdit ? descInput() : descParagraph()}
-      <div onClick={askForCancel} className='del-btn'>
-        <i class='fas fa-trash-clock'></i>
+      <div className='st-buttons'>
+        <div className='st-btn btn-del' onClick={askForCancel}>
+          <i className='fa-solid fa-trash-can'></i>
+        </div>
+        {cancelButton()}
       </div>
-      {cancelButton()}
+      {isEdit ? descInput() : descParagraph()}
     </div>
   );
 };
