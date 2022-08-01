@@ -9,6 +9,7 @@ const StickerBoard = () => {
 
   useEffect(() => {
     execute();
+    // eslint-disable-next-line
   }, []);
 
   return (
