@@ -1,0 +1,7 @@
+Implement previous home task (L31_260722) but with addons
+
+There is should be a button to change a Dark/Light theme. It should change color of the stickers.
+When an user clicks on a sticker, a new page is opened
+(with a URL like /sticker/id, for example /sticker/1).
+On this page user can change the sticker text and save it.
+When sticker is saved - the user is redirected to the stickers home page.
