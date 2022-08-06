@@ -5,3 +5,5 @@ Allows User to Add, Edit and Remove stickers\
 \
 If sticker is removed, User have about 5 sec to undo delete.\
 Overwise sticker will be removed permanently
+
+Also User can change theme from light to dark

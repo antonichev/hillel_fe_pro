@@ -1,5 +1,6 @@
 import { removeSticker, updateSticker } from '../services/api';
 import { useState, useRef } from 'react';
+import { useTheme } from './../context/ThemeContext';
 
 const StickerItem = ({ id, description, setData, data }) => {
   const [isEdit, setIsEdit] = useState(false);
@@ -7,6 +8,7 @@ const StickerItem = ({ id, description, setData, data }) => {
   const [showDel, setShowDel] = useState(true);
   const [showCancel, setShowCancel] = useState(false);
   const canDel = useRef(false);
+  const { theme } = useTheme();
 
   const deleteSticker = () => {
     removeSticker(id).then((resp) => {
@@ -85,7 +87,7 @@ const StickerItem = ({ id, description, setData, data }) => {
   };
 
   return (
-    <div className='sticker-item'>
+    <div className={`sticker-item ${theme}`}>
       <div className='st-buttons'>
         {delButton()}
         {cancelButton()}

@@ -3,8 +3,25 @@
   color: #e0e1ce;
   height: 75px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 15px;
+}
+
+.app-header h1,
+h4 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.app-header h4 {
+  color: #ffc6aa;
+}
+
+.app-header h4:hover {
+  color: #ffa477;
+  cursor: pointer;
 }
 
 .add-btn {
@@ -28,7 +45,11 @@
   align-content: center;
   justify-content: center;
   gap: 10px 20px;
-  width: 90%;
+  width: 100%;
+}
+
+.sticker-board.dark {
+  background-color: #4a4a4a;
 }
 
 .sticker-item {
@@ -37,6 +58,11 @@
   padding: 15px;
   border: 1px solid #000;
   border-radius: 10px;
+}
+
+.sticker-item.dark {
+  border: 1px solid #cddbfe;
+  color: #fff;
 }
 
 .sticker-area {
