@@ -6,6 +6,10 @@ export const getStickers = () => {
   return axios.get(baseURL);
 };
 
+export const getSticker = (id) => {
+  return axios.get(`${baseURL}/${id}`);
+};
+
 export const addSticker = (sticker) => {
   if (sticker) return axios.post(baseURL, sticker);
   return Promise.reject('No sticker found in params');
