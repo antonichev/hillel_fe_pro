@@ -1,5 +1,17 @@
+import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
+import './App.css';
+
 function App() {
-  return <div>App</div>;
+  const redirect = useNavigate();
+
+  return (
+    <header className='main-header'>
+      <Button variant='contained' onClick={() => redirect('/users')}>
+        Users
+      </Button>
+    </header>
+  );
 }
 
 export default App;
