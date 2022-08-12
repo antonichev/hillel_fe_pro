@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { getUsers, removeUser } from './../utils/api';
-import { useNavigate } from 'react-router-dom';
-import QuestionDialog from './QuestionDialog';
+import React, { useState, useEffect } from "react";
+import { getUsers, removeUser } from "./../utils/api";
+import { useNavigate } from "react-router-dom";
+import QuestionDialog from "./QuestionDialog";
 import {
   Button,
   Table,
@@ -11,7 +11,7 @@ import {
   TableHead,
   TableRow,
   Paper,
-} from '@mui/material';
+} from "@mui/material";
 
 export default function UsersList() {
   const [users, setUsers] = useState([]);
@@ -47,9 +47,11 @@ export default function UsersList() {
         handleCloseNo={() => setShowDialog(false)}
         handleCloseYes={remove}
       />
-      <Button variant='contained' onClick={() => redirect('/user/create')}>
-        Add new user
-      </Button>
+      <div className='flex-container'>
+        <Button variant='contained' onClick={() => redirect("/user/create")}>
+          Add new user
+        </Button>
+      </div>
       <hr />
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label='simple table'>
@@ -66,7 +68,7 @@ export default function UsersList() {
             {users?.map((user) => (
               <TableRow
                 key={user.id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 onClick={handleTrClick.bind(null, user.id)}
               >
                 <TableCell align='center'>{user.id}</TableCell>

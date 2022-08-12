@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .not-found {
   display: flex;
   justify-content: center;
